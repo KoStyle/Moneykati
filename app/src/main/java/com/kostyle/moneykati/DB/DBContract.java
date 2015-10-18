@@ -89,4 +89,24 @@ public class DBContract {
 
     public static final String SQL_DELETE_JOU =
             "DROP TABLE IF EXISTS " + JournalEntry._TABLE_Journal;
+
+    public enum CAT_TYPE {
+        DEBIT, CREDIT
+    }
+
+    public enum ACC_STATUS{
+        OPEN, CLOSED
+    }
+
+    public enum REP_TYPE{
+        DAY, MONTH, YEAR
+    }
+
+    public enum DEBT_STATUS{
+        OPEN, CLOSED
+    }
+
+    public enum MYBOOL{
+        TRUE, FALSE
+    }
 }

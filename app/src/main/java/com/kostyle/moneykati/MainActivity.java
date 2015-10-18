@@ -62,9 +62,20 @@ public class MainActivity extends AppCompatActivity {
         values.put(DBContract.AccountEntry._COLUMN_NAME, "John's Account");
         values.put(DBContract.AccountEntry._COLUMN_InitialBalance, 1000000);
 
-// Insert the new row, returning the primary key value of the new row
         long newRowId;
         newRowId = db.insert(DBContract.AccountEntry._TABLE_Account,null, values);
+
+        values = new ContentValues();
+        values.put(DBContract.CategoryEntry._COLUMN_ID, 64);
+        values.put(DBContract.CategoryEntry._COLUMN_Name, "Tselinoyarsk");
+        values.put(DBContract.CategoryEntry._COLUMN_Type, "1");
+        newRowId = db.insert(DBContract.CategoryEntry._TABLE_Category,null, values);
+
+        values = new ContentValues();
+        values.put(DBContract.CategoryEntry._COLUMN_ID, 84);
+        values.put(DBContract.CategoryEntry._COLUMN_Name, "Zaire");
+        values.put(DBContract.CategoryEntry._COLUMN_Type, "2");
+        newRowId = db.insert(DBContract.CategoryEntry._TABLE_Category,null, values);
 
 
         CharSequence texto="Wake me up when you need me";
