@@ -15,4 +15,14 @@
         android:clickable="true"
         android:enabled="true"
         android:onClick="inizializeDB" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COPIAR BD"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginTop="48dp"
+        android:onClick="copyDB" />
 </RelativeLayout>

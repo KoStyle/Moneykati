@@ -13,6 +13,11 @@ import android.widget.Toast;
 import com.kostyle.moneykati.DB.DBContract;
 import com.kostyle.moneykati.DB.DBHelper;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -62,5 +72,42 @@ public class MainActivity extends AppCompatActivity {
         int duracion=Toast.LENGTH_LONG;
         Toast t=Toast.makeText(context, texto, duracion);
         t.show();
+    }
+
+    public void copyDB(View view){
+        File f=new File("/data/data/com.kostyle.moneykati/databases/MoneyKati.db");
+        FileInputStream fis =null;
+        FileOutputStream fos=null;
+
+        try
+        {
+            fis=new FileInputStream(f);
+            fos=new FileOutputStream("/sdcard/Download/MK_dump.db");
+            while(true)
+            {
+                int i=fis.read();
+                if(i!=-1)
+                {fos.write(i);}
+                else
+                {break;}
+            }
+            fos.flush();
+            Toast.makeText(this, "DB dump OK", Toast.LENGTH_LONG).show();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            Toast.makeText(this, "DB dump ERROR", Toast.LENGTH_LONG).show();
+        }
+        finally
+        {
+            try
+            {
+                fos.close();
+                fis.close();
+            }
+            catch(IOException ioe)
+            {}
+        }
     }
 }
