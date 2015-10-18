@@ -1,9 +1,17 @@
 package com.kostyle.moneykati;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.kostyle.moneykati.DB.DBContract;
+import com.kostyle.moneykati.DB.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,5 +41,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void inizializeDB(View view){
+        DBHelper dbh= new DBHelper(this);
+        SQLiteDatabase db= dbh.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DBContract.AccountEntry._COLUMN_ID, 117);
+        values.put(DBContract.AccountEntry._COLUMN_NAME, "John's Account");
+        values.put(DBContract.AccountEntry._COLUMN_InitialBalance, 1000000);
+
+// Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(DBContract.AccountEntry._TABLE_Account,null, values);
+
+
+        CharSequence texto="Wake me up when you need me";
+        Context context = getApplicationContext();
+        int duracion=Toast.LENGTH_LONG;
+        Toast t=Toast.makeText(context, texto, duracion);
+        t.show();
     }
 }
