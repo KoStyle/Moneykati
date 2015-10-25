@@ -1,4 +1,4 @@
-package com.kostyle.moneykati.DB;
+package com.kostyle.moneykati.Controller;
 
 /**
  * Created by Manu on 18/10/2015.

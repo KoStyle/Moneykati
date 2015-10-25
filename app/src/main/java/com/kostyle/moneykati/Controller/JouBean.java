@@ -1,4 +1,4 @@
-package com.kostyle.moneykati.DB;
+package com.kostyle.moneykati.Controller;
 
 import java.util.Date;
 

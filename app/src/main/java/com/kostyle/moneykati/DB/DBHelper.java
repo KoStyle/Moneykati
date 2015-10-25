@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.kostyle.moneykati.Controller.DBContract;
+
 /**
  * Created by Manu on 17/10/2015.
  */
@@ -28,7 +30,6 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL(DBContract.SQL_DELETE_ACC);
         db.execSQL(DBContract.SQL_DELETE_CAT);
         db.execSQL(DBContract.SQL_DELETE_JOU);
-
         onCreate(db);
     }
 

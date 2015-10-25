@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.kostyle.moneykati.DB.DBContract;
+import com.kostyle.moneykati.Controller.DBContract;
 import com.kostyle.moneykati.DB.DBHelper;
 
 import java.io.File;
