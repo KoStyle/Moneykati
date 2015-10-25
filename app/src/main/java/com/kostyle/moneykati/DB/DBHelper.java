@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.kostyle.moneykati.Controller.DBContract;
-
 /**
  * Created by Manu on 17/10/2015.
  */

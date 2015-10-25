@@ -1,4 +1,4 @@
-package com.kostyle.moneykati.Controller;
+package com.kostyle.moneykati.DB;
 
 import android.provider.BaseColumns;
 
