@@ -5,13 +5,18 @@ package com.kostyle.moneykati.Controller;
  */
 public class CatBean {
 
-    public CatBean(){}
+    public CatBean(){
+        this.id=0;
+        this.name="";
+        this.type=Controller.CAT_TYPE.DEBIT;
+        this.link=0;
+    }
 
-    public double sysId;
-    public double id;
-    public String name;
-    public String type;
-    public double link;
+    private double sysId;
+    private double id;
+    private String name;
+    private Controller.CAT_TYPE type;
+    private double link;
 
     public double getSysId() {
         return sysId;
@@ -37,11 +42,11 @@ public class CatBean {
         this.name = name;
     }
 
-    public String getType() {
+    public Controller.CAT_TYPE getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Controller.CAT_TYPE type) {
         this.type = type;
     }
 

@@ -4,15 +4,22 @@ package com.kostyle.moneykati.Controller;
  * Created by Manu on 18/10/2015.
  */
 public class AccBean {
-    public AccBean(){}
+    public AccBean(){
+        this.id=0;
+        this.name="";
+        this.iniBal=0;
+        this.bal=0;
+        this.idMaster=0;
+        this.status=Controller.ACC_STATUS.OPEN;
+    }
 
-    public double sysId;
-    public double id;
-    public String name;
-    public double iniBal;
-    public double bal;
-    public double idMaster;
-    public String status;
+    private double sysId;
+    private double id;
+    private String name;
+    private double iniBal;
+    private double bal;
+    private double idMaster;
+    private Controller.ACC_STATUS status;
 
     public double getSysId() {
         return sysId;
@@ -62,11 +69,11 @@ public class AccBean {
         this.idMaster = idMaster;
     }
 
-    public String getStatus() {
+    public Controller.ACC_STATUS getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Controller.ACC_STATUS status) {
         this.status = status;
     }
 }

@@ -7,20 +7,32 @@ import java.util.Date;
  */
 public class JouBean {
 
-    public JouBean(){}
+    public JouBean(){
+        this.accId=0;
+        this.amount =0;
+        this.catId=0;
+        this.debt=Controller.MYBOOL.FALSE;
+        this.dStatus=Controller.DEBT_STATUS.CLOSED;
+        this.ts= new Date();
+        this.id=0;
+        this.reptype=Controller.REP_TYPE.NONE;
+        this.repspan=0;
+        this.dContact="";
+        this.obs="";
+    }
 
-    public double sysId;
-    public double id;
-    public double accId;
-    public double catId;
-    public Date ts;
-    public double ammount;
-    public String reptype;
-    public double repspan;
-    public String debt;
-    public String dContact;
-    public String dStatus;
-    public String obs;
+    private double sysId;
+    private double id;
+    private double accId;
+    private double catId;
+    private Date ts;
+    private double amount;
+    private Controller.REP_TYPE reptype;
+    private double repspan;
+    private Controller.MYBOOL debt;
+    private String dContact;
+    private Controller.DEBT_STATUS dStatus;
+    private String obs;
 
     public double getSysId() {
         return sysId;
@@ -62,19 +74,19 @@ public class JouBean {
         this.ts = ts;
     }
 
-    public double getAmmount() {
-        return ammount;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAmmount(double ammount) {
-        this.ammount = ammount;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public String getReptype() {
+    public Controller.REP_TYPE getReptype() {
         return reptype;
     }
 
-    public void setReptype(String reptype) {
+    public void setReptype(Controller.REP_TYPE reptype) {
         this.reptype = reptype;
     }
 
@@ -86,11 +98,11 @@ public class JouBean {
         this.repspan = repspan;
     }
 
-    public String getDebt() {
+    public Controller.MYBOOL getDebt() {
         return debt;
     }
 
-    public void setDebt(String debt) {
+    public void setDebt(Controller.MYBOOL debt) {
         this.debt = debt;
     }
 
@@ -102,11 +114,11 @@ public class JouBean {
         this.dContact = dContact;
     }
 
-    public String getdStatus() {
+    public Controller.DEBT_STATUS getdStatus() {
         return dStatus;
     }
 
-    public void setdStatus(String dStatus) {
+    public void setdStatus(Controller.DEBT_STATUS dStatus) {
         this.dStatus = dStatus;
     }
 
