@@ -77,4 +77,60 @@ public class Controller {
 
         db.insert(DBContract.CategoryEntry._TABLE_Category, null, values);
     }
+
+    public static void updateAccount(AccBean acc, SQLiteDatabase db){
+
+        //Updated values
+        ContentValues values = new ContentValues();
+        values.put(DBContract.AccountEntry._COLUMN_Status , acc.getStatus().toString());
+        values.put(DBContract.AccountEntry._COLUMN_CurrentBalance , acc.getBal());
+        values.put(DBContract.AccountEntry._COLUMN_ID_Master , acc.getIdMaster());
+        values.put(DBContract.AccountEntry._COLUMN_InitialBalance , acc.getIniBal());
+        values.put(DBContract.AccountEntry._COLUMN_NAME , acc.getName());
+
+        //Selection string
+        String selection = DBContract.AccountEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = { String.valueOf(acc.getId())};
+
+        db.update(DBContract.AccountEntry._TABLE_Account, values, selection, parameters);
+    }
+
+    public static void updateJournalEntry(JouBean je, SQLiteDatabase db){
+        ContentValues values = new ContentValues();
+        values.put(DBContract.JournalEntry._COLUMN_ACC, je.getAccId());
+        values.put(DBContract.JournalEntry._COLUMN_AMO, je.getAmount());
+        values.put(DBContract.JournalEntry._COLUMN_CAT, je.getCatId());
+        values.put(DBContract.JournalEntry._COLUMN_DCONT, je.getdContact());
+        values.put(DBContract.JournalEntry._COLUMN_DEBT, je.getDebt().toString());
+        values.put(DBContract.JournalEntry._COLUMN_DSTATUS, je.getdStatus().toString());
+        values.put(DBContract.JournalEntry._COLUMN_OBS, je.getObs());
+        values.put(DBContract.JournalEntry._COLUMN_REPSPAN, je.getRepspan());
+        values.put(DBContract.JournalEntry._COLUMN_REPTYPE, je.getReptype().toString());
+        values.put(DBContract.JournalEntry._COLUMN_TIME, je.getTs().toString());
+
+        //Selection string
+        String selection = DBContract.JournalEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = {String.valueOf(je.getId())};
+
+        db.update(DBContract.JournalEntry._TABLE_Journal, values, selection, parameters);
+    }
+
+    public static void updateCategory(CatBean category, SQLiteDatabase db){
+        ContentValues values = new ContentValues();
+        values.put(DBContract.CategoryEntry._COLUMN_Type, category.getType().toString());
+        values.put(DBContract.CategoryEntry._COLUMN_Name, category.getName());
+        values.put(DBContract.CategoryEntry._COLUMN_LINK, category.getLink());
+
+        //Selection string
+        String selection = DBContract.CategoryEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = {String.valueOf(category.getId())};
+
+        db.update(DBContract.CategoryEntry._TABLE_Category, values, selection, parameters);
+    }
 }
