@@ -8,6 +8,7 @@ import com.kostyle.moneykati.DB.DBContract;
 /**
  * Created by Manu on 25/10/2015.
  */
+@SuppressWarnings("DefaultFileTemplate")
 public class Controller {
 
     private static final String COMMA = ", ";
@@ -133,4 +134,35 @@ public class Controller {
 
         db.update(DBContract.CategoryEntry._TABLE_Category, values, selection, parameters);
     }
+
+    public static void deleteAccount(AccBean acc, SQLiteDatabase db){
+        //Selection string
+        String selection = DBContract.AccountEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = { String.valueOf(acc.getId())};
+
+        db.delete(DBContract.AccountEntry._TABLE_Account, selection, parameters);
+    }
+
+    public static void deleteJournalEntry(JouBean je, SQLiteDatabase db){
+        //Selection string
+        String selection = DBContract.JournalEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = {String.valueOf(je.getId())};
+
+        db.delete(DBContract.JournalEntry._TABLE_Journal, selection, parameters);
+    }
+
+    public static void deleteCategory(CatBean category, SQLiteDatabase db){
+        //Selection string
+        String selection = DBContract.CategoryEntry._COLUMN_ID + " = ?";
+
+        //Parameters for the ? characters
+        String[] parameters = {String.valueOf(category.getId())};
+
+        db.delete(DBContract.CategoryEntry._TABLE_Category, selection, parameters);
+    }
+
 }
