@@ -11,8 +11,6 @@ import com.kostyle.moneykati.DB.DBContract;
 @SuppressWarnings("DefaultFileTemplate")
 public class Controller {
 
-    private static final String COMMA = ", ";
-
     public enum CAT_TYPE {
         DEBIT, CREDIT
     }
