@@ -3,5 +3,14 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string-array name="planets_array">
+        <item>Paco Fiestas</item>
+        <item>Piticli</item>
+        <item>John117</item>
+        <item>Big Boss</item>
+        <item>Solid</item>
+        <item>Liquid</item>
+        <item>Ur-anus</item>
+        <item>Quiet</item>
+    </string-array>
 </resources>
